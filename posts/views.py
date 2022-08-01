@@ -8,6 +8,9 @@ from drf_api.permissions import IsOwnerOrReadOnly
 
 
 class PostList(APIView):
+    """
+    List posts or create a post if logged in
+    """
     serializer_class = PostSerializer
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
@@ -34,8 +37,10 @@ class PostList(APIView):
         )
 
 
-
 class PostDetail(APIView):
+    """
+    Retrieve a post and edit or delete it if you own it
+    """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = PostSerializer
 
