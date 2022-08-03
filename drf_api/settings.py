@@ -66,7 +66,7 @@ SECRET_KEY = {
 }
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['moments-drf-api-app.herokuapp.com', 'localhost']
 
